@@ -28,7 +28,7 @@ export default function Home({category, meta, info}) {
                 <p>{info.deskripsi}</p>
               </div>
               <div className="col-md-6">
-                <Image src="/static/images/banner.jpg" alt="banner" width={500} height={500} />
+                <img src={info.base.path_img_meta+info.content.banner} alt="banner" width={500} height={500} />
               </div>
             </div>
           </div>
