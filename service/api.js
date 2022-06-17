@@ -40,4 +40,25 @@ export default class ApiService {
       return error;
     }
   }
+
+  static async getPost() {
+    try {
+      const response = await fetch(URL_API+"getberita?");
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  static async getPostId(slug) {
+    try {
+      const response = await fetch(URL_API+"getberita/"+slug);
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      return error;
+    }
+  }
+  
 }
