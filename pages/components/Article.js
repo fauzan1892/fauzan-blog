@@ -21,16 +21,16 @@ const Navbar = ({ children, article }) => {
             <div class="card-body p-2">
               <small>
                 <a href="" class="text-primary p-text">
-                  <b>Portfolio</b>
+                  <b>{art.nm_kategori}</b>
                 </a>
               </small>
               <p class="card-title mt-2">
                 <a href="" class="text-card-home p-text">
-                  <b>Codekop &amp; Pembaruan CMS Versi 4</b>
+                  <b>{art.judul}</b>
                 </a>
               </p>
               <small class="text-danger">
-                <b><i class="fa fa-calendar"></i>31 Januari 2022,  5:33</b>
+                <b><i class="fa fa-calendar"></i>{art.tgl_input}</b>
               </small>
             </div>
           </div>
