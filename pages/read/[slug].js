@@ -1,6 +1,7 @@
 import Layout from "../../components/layout";
 import ApiService from "../../service/api";
 import Back from "../components/Back";
+import Footer from "../components/Footer";
 
 export const getServerSideProps = async ({ params }) => {
   const category = await ApiService.getKat();
@@ -61,14 +62,7 @@ export default function Home({ category, meta, info, article }) {
           ></div>
         </div>
       </div>
-      <div className="clearfix"></div>
-      <div className="footer-second">
-        <div className="container">
-          <small>
-            <b>Codekop CMS © 2017-2021 All Reserved</b>
-          </small>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }

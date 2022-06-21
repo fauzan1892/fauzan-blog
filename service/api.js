@@ -82,7 +82,7 @@ export default class ApiService {
 
   static async getPostId(slug) {
     try {
-      const response = await fetch(URL_API + "getberita/" + slug);
+      const response = await fetch(URL_API + "getkategori/" + slug);
       const responseJson = await response.json();
       return responseJson;
     } catch (error) {
