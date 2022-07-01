@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
 
@@ -78,44 +77,82 @@ const Article = ({ children, article, getpage }) => {
       </Masonry>
       <nav aria-label="Page navigation">
         <ul className="pagination">
-          <li className={paginates.pagePrevious == '#' || getpage == 0 ? 'page-item disabled' : 'page-item'}>
-            <Link href={ '/category/'+paginates.category+`?page=`+ paginates.pagePrevious } 
-              aria-current="page">
+          <li
+            className={
+              paginates.pagePrevious == "#" || getpage == 0
+                ? "page-item disabled"
+                : "page-item"
+            }
+          >
+            <Link
+              href={
+                "/category/" +
+                paginates.category +
+                `?page=` +
+                paginates.pagePrevious
+              }
+              aria-current="page"
+            >
               <a className="page-link" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span className="sr-only">Previous</span>
               </a>
             </Link>
           </li>
-          {paginates.paging.map((page) => { 
+          {paginates.paging.map((page) => {
             let pageq = 0;
-            if(getpage == 0){
-              if( page == "undefined"){
+            if (getpage == 0) {
+              if (page == "undefined") {
                 pageq = 1;
-              }else{
+              } else {
                 pageq = page + 1;
               }
-            }else{
+            } else {
               pageq = page;
             }
-            if(paginates.pages >= pageq){
-              if(paginates.pages == 1){
-
-              }else{
-                return(
-                  <li key={pageq} className={paginates.pageNumber == pageq ? 'page-item active' : pageq == 1 && getpage == 0 ? 'page-item active' : 'page-item'}>
-                    <Link href={ '/category/'+paginates.category+`?page=`+ pageq } 
-                      aria-current="page">
-                      <a className="page-link">{ pageq }</a>
+            if (paginates.pages >= pageq) {
+              if (paginates.pages == 1) {
+              } else {
+                return (
+                  <li
+                    key={pageq}
+                    className={
+                      paginates.pageNumber == pageq
+                        ? "page-item active"
+                        : pageq == 1 && getpage == 0
+                        ? "page-item active"
+                        : "page-item"
+                    }
+                  >
+                    <Link
+                      href={
+                        "/category/" + paginates.category + `?page=` + pageq
+                      }
+                      aria-current="page"
+                    >
+                      <a className="page-link">{pageq}</a>
                     </Link>
                   </li>
-                )
+                );
               }
             }
           })}
-          <li className={paginates.pageNext == '#' || getpage == 0 ? 'page-item disabled' : 'page-item'}>
-            <Link href={ '/category/'+paginates.category+`?page=`+ paginates.pageNext } 
-              aria-current="page">
+          <li
+            className={
+              paginates.pageNext == "#" || getpage == 0
+                ? "page-item disabled"
+                : "page-item"
+            }
+          >
+            <Link
+              href={
+                "/category/" +
+                paginates.category +
+                `?page=` +
+                paginates.pageNext
+              }
+              aria-current="page"
+            >
               <a className="page-link" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span className="sr-only">Next</span>
