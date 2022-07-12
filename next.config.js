@@ -6,6 +6,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['fauzandev.my.idr'],
+    domains: ['fauzandev.my.id'],
   },
 }
