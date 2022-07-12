@@ -35,7 +35,7 @@ const Article = ({ children, article, getpage }) => {
       >
         {articles?.map((art) => (
           <div key={art.slug_berita}>
-            <div className="card mb-4 card-rounded">
+            <div className="card mb-4">
               {/* <div style={{width: '100%', height: '100%', position: 'relative'}}> */}
                 <Link href={`/read/${art.slug_berita}.html`}>
                   <a>
@@ -46,9 +46,8 @@ const Article = ({ children, article, getpage }) => {
                           ? paginates?.path_default
                           : paginates?.path_img + "" + art.user + "/" + art.gambar
                       }
-                      id="img-artikel"
                       alt={art.judul}
-                      width="100%" height="50%" layout="responsive" objectFit="cover"
+                      width="100%" height="100%" layout="responsive" objectFit="cover"
                     />
                   </a>
                 </Link>

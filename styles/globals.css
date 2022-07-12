@@ -14,7 +14,7 @@ body {
   height: auto;
 }
 #header {
-  background-image: url("../public/background.png");
+  background-image: url("./background.png");
   background-size: 100%;
 }
 
