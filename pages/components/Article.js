@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Masonry from "react-masonry-css";
 
 const Article = ({ children, article, getpage }) => {
