@@ -4,6 +4,7 @@ import Article from "./components/Article";
 import Image from "next/image";
 import ApiService from "../service/api";
 import Link from "next/link";
+import bg from "../public/background.png";
 
 export const getServerSideProps = async () => {
   const category = await ApiService.getKat();
@@ -23,7 +24,11 @@ export const getServerSideProps = async () => {
 export default function Home({ category, meta, info, article }) {
   return (
     <>
-      <div id="header">
+      <div id="header" style={{
+          backgroundImage: `url(${bg.src})`,
+          width: '100%',
+          height: '100%',
+        }}>
         <Layout meta={meta} />
         <Navbar category={category} />
         <div className="banner">
