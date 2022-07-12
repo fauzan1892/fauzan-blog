@@ -26,7 +26,7 @@ const Navbar = ({ children, category }) => {
       <nav id="navbarApp" className="navbar navbar-expand-md fixed-top py-1">
         <div className="container">
           <a className="navbar-brand" href="/">
-            {'Navbar'}
+            {'./Fauzan'}
           </a>
           <button
             className="navbar-toggler d-lg-none"
