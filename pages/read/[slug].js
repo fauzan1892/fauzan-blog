@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
 import ApiService from "../../service/api";
+import Image from "next/image";
 import Back from "../components/Back";
 import Footer from "../components/Footer";
 
@@ -19,8 +20,8 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function Home({ category, meta, info, article }) {
-  let articles = article.content;
-  let paginates = article.paginate;
+  let articles = article.content ? article.content : [];
+  let paginates = article.paginate ? article.paginate : [];
   return (
     <>
       <Layout meta={meta} />
@@ -36,24 +37,28 @@ export default function Home({ category, meta, info, article }) {
             <span className="btn-profile"> | </span>
             <i className="fa fa-calendar"></i> {paginates.tgl_insert}
             <span className="btn-profile"> | </span>
-            <i className="fa fa-eye"></i> {articles.counter}x
+            <i className="fa fa-eye"></i> {articles.counter}{'x'}
           </p>
           <br />
           <center>
-            <img
-              className="img-fluid"
-              src={
-                articles.gambar == "0"
-                  ? paginates.path_default
-                  : paginates.path_img +
-                    "" +
-                    articles.u_login +
-                    "/" +
-                    articles.gambar
-              }
-              id="img-articles"
-              alt={articles.judul}
-            />
+            <div style={{width: '100%', height: '100%', position: 'relative'}}>
+              <Image
+                className="img-fluid"
+                src={
+                  articles.gambar == "0"
+                    ? paginates.path_default
+                    : paginates.path_img +
+                      "" +
+                      articles.u_login +
+                      "/" +
+                      articles.gambar
+                }
+                id="img-articles"
+                alt={articles.judul}
+                layout='fill'
+                objectFit='contain'
+              />
+            </div>
           </center>
           <br />
           <div

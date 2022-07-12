@@ -26,7 +26,7 @@ const Navbar = ({ children, category }) => {
       <nav id="navbarApp" className="navbar navbar-expand-md fixed-top py-1">
         <div className="container">
           <a className="navbar-brand" href="/">
-            Navbar
+            {'Navbar'}
           </a>
           <button
             className="navbar-toggler d-lg-none"
@@ -43,7 +43,7 @@ const Navbar = ({ children, category }) => {
             <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
               <li className="nav-item" key={0}>
                 <Link href={`/`} aria-current="page">
-                  <a className="nav-link">Home</a>
+                  <a className="nav-link">{'Home'}</a>
                 </Link>
               </li>
               {category.map((kat) => (

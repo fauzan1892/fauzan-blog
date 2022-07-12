@@ -10,7 +10,7 @@ const Footer = ({ children }) => {
       <div className="footer-second">
         <div className="container">
           <small>
-            <b>Codekop CMS © 2017-2022 All Reserved</b>
+            <b>{'Codekop CMS © 2017-2022 All Reserved'}</b>
           </small>
         </div>
       </div>

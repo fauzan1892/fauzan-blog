@@ -5,8 +5,8 @@ import Link from "next/link";
 import Masonry from "react-masonry-css";
 
 const Article = ({ children, article, getpage }) => {
-  let articles = article.content;
-  let paginates = article.paginate;
+  let articles = article.content ? article.content : [];
+  let paginates = article.paginate ? article.paginate : [];
   useEffect(() => {
     window.addEventListener("DOMSubtreeModified", function () {
       var elem = document.querySelector(".row");
@@ -36,20 +36,24 @@ const Article = ({ children, article, getpage }) => {
         {articles.map((art) => (
           <div key={art.slug_berita}>
             <div className="card mb-4 card-rounded">
-              <Link href={`/read/${art.slug_berita}.html`}>
-                <a>
-                  <img
-                    className="card-img-top"
-                    src={
-                      art.gambar == "0"
-                        ? paginates.path_default
-                        : paginates.path_img + "" + art.user + "/" + art.gambar
-                    }
-                    id="img-artikel"
-                    alt={art.judul}
-                  />
-                </a>
-              </Link>
+              <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                <Link href={`/read/${art.slug_berita}.html`}>
+                  <a>
+                    <Image
+                      className="card-img-top"
+                      src={
+                        art.gambar == "0"
+                          ? paginates.path_default
+                          : paginates.path_img + "" + art.user + "/" + art.gambar
+                      }
+                      id="img-artikel"
+                      alt={art.judul}
+                      layout='fill'
+                      objectFit='contain'
+                    />
+                  </a>
+                </Link>
+              </div>
               <div className="card-body">
                 <small>
                   <Link href={`/category/${art.slug_kat}`} aria-current="page">
