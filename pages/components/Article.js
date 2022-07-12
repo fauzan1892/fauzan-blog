@@ -5,8 +5,8 @@ import Image from "next/image";
 import Masonry from "react-masonry-css";
 
 const Article = ({ children, article, getpage }) => {
-  let articles = article.content ? article.content : [];
-  let paginates = article.paginate ? article.paginate : [];
+  let articles = article?.content;
+  let paginates = article?.paginate;
   useEffect(() => {
     window.addEventListener("DOMSubtreeModified", function () {
       var elem = document.querySelector(".row");
@@ -43,8 +43,8 @@ const Article = ({ children, article, getpage }) => {
                       className="card-img-top"
                       src={
                         art.gambar == "0"
-                          ? paginates.path_default
-                          : paginates.path_img + "" + art.user + "/" + art.gambar
+                          ? paginates?.path_default
+                          : paginates?.path_img + "" + art.user + "/" + art.gambar
                       }
                       id="img-artikel"
                       alt={art.judul}
@@ -84,7 +84,7 @@ const Article = ({ children, article, getpage }) => {
         <ul className="pagination">
           <li
             className={
-              paginates.pagePrevious == "#" || getpage == 0
+              paginates?.pagePrevious == "#" || getpage == 0
                 ? "page-item disabled"
                 : "page-item"
             }
@@ -92,9 +92,9 @@ const Article = ({ children, article, getpage }) => {
             <Link
               href={
                 "/category/" +
-                paginates.category +
+                paginates?.category +
                 `?page=` +
-                paginates.pagePrevious
+                paginates?.pagePrevious
               }
               aria-current="page"
             >
@@ -104,7 +104,7 @@ const Article = ({ children, article, getpage }) => {
               </a>
             </Link>
           </li>
-          {paginates.paging?.map((page) => {
+          {paginates?.paging.map((page) => {
             let pageq = 0;
             if (getpage == 0) {
               if (page == "undefined") {
@@ -115,14 +115,14 @@ const Article = ({ children, article, getpage }) => {
             } else {
               pageq = page;
             }
-            if (paginates.pages >= pageq) {
-              if (paginates.pages == 1) {
+            if (paginates?.pages >= pageq) {
+              if (paginates?.pages == 1) {
               } else {
                 return (
                   <li
                     key={pageq}
                     className={
-                      paginates.pageNumber == pageq
+                      paginates?.pageNumber == pageq
                         ? "page-item active"
                         : pageq == 1 && getpage == 0
                         ? "page-item active"
@@ -131,7 +131,7 @@ const Article = ({ children, article, getpage }) => {
                   >
                     <Link
                       href={
-                        "/category/" + paginates.category + `?page=` + pageq
+                        "/category/" + paginates?.category + `?page=` + pageq
                       }
                       aria-current="page"
                     >
@@ -144,7 +144,7 @@ const Article = ({ children, article, getpage }) => {
           })}
           <li
             className={
-              paginates.pageNext == "#" || getpage == 0
+              paginates?.pageNext == "#" || getpage == 0
                 ? "page-item disabled"
                 : "page-item"
             }
@@ -152,9 +152,9 @@ const Article = ({ children, article, getpage }) => {
             <Link
               href={
                 "/category/" +
-                paginates.category +
+                paginates?.category +
                 `?page=` +
-                paginates.pageNext
+                paginates?.pageNext
               }
               aria-current="page"
             >
