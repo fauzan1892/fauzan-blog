@@ -33,7 +33,7 @@ const Article = ({ children, article, getpage }) => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {articles.map((art) => (
+        {articles?.map((art) => (
           <div key={art.slug_berita}>
             <div className="card mb-4 card-rounded">
               <div style={{width: '100%', height: '100%', position: 'relative'}}>
@@ -104,7 +104,7 @@ const Article = ({ children, article, getpage }) => {
               </a>
             </Link>
           </li>
-          {paginates.paging.map((page) => {
+          {paginates.paging?.map((page) => {
             let pageq = 0;
             if (getpage == 0) {
               if (page == "undefined") {

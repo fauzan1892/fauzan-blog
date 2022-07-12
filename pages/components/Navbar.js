@@ -46,7 +46,7 @@ const Navbar = ({ children, category }) => {
                   <a className="nav-link">{'Home'}</a>
                 </Link>
               </li>
-              {category.map((kat) => (
+              {category?.map((kat) => (
                 <li className="nav-item" key={kat.id_kategori}>
                   <Link href={`/category/${kat.slug_kat}`} aria-current="page">
                     <a className="nav-link">{kat.nm_kategori}</a>
