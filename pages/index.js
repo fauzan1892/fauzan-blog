@@ -64,16 +64,16 @@ export default function Home({ category, meta, info, article }) {
               </div>
               <div className="col-sm-5">
                 <center>
-                  <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                  <br/><br/>
+                  {/* <div style={{width: '100%', height: '100%', position: 'relative'}}> */}
                     <Image
                       src="https://fauzandev.my.id/cd-view/template/portfolio/img/user.png"
                       className="img-fluid"
                       id="img-user"
                       alt='fauzan-jpg'
-                      layout='fill'
-                      objectFit='contain'
+                      width="100%" height="100%" layout="responsive" objectFit="cover"
                     />
-                  </div>
+                  {/* </div> */}
                 </center>
               </div>
             </div>
@@ -207,6 +207,47 @@ export default function Home({ category, meta, info, article }) {
           <Article article={article} />
         </div>
       </div>
+      {/* <div className="footer text-white mb-4" id="contact">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6" data-aos="fade-left">
+              <br />
+              <h2 className="halo-text3">Google Maps</h2>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6324972520476!2d107.01620782915519!3d-6.193579666442703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTEnMzYuOSJTIDEwN8KwMDEnMDAuMyJF!5e0!3m2!1sid!2sid!4v1507127219046"
+                className="img-responsive gmaps"
+              ></iframe>
+            </div>
+            <div className="col-md-6" data-aos="fade-right">
+              <br />
+              <h2 className="halo-text3">Feel free to contact me</h2>
+              <form method="post" action="https://fauzandev.my.id/kontak/add">
+                <div className="form-group">
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="form-control"
+                    name="name"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Email address</label>
+                  <input type="email" className="form-control" name="email" />
+                </div>
+                <div className="form-group">
+                  <label>Your Messages</label>
+                  <textarea name="text" className="form-control"></textarea>
+                </div>
+                <button type="submit" className="btn btn-info">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div> */}
       <div className="footer-second">
         <div className="container">
           <small>

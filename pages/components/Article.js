@@ -36,7 +36,7 @@ const Article = ({ children, article, getpage }) => {
         {articles?.map((art) => (
           <div key={art.slug_berita}>
             <div className="card mb-4 card-rounded">
-              <div style={{width: '100%', height: '100%', position: 'relative'}}>
+              {/* <div style={{width: '100%', height: '100%', position: 'relative'}}> */}
                 <Link href={`/read/${art.slug_berita}.html`}>
                   <a>
                     <Image
@@ -48,12 +48,11 @@ const Article = ({ children, article, getpage }) => {
                       }
                       id="img-artikel"
                       alt={art.judul}
-                      layout='fill'
-                      objectFit='contain'
+                      width="100%" height="50%" layout="responsive" objectFit="cover"
                     />
                   </a>
                 </Link>
-              </div>
+              {/* </div> */}
               <div className="card-body">
                 <small>
                   <Link href={`/category/${art.slug_kat}`} aria-current="page">

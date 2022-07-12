@@ -41,7 +41,6 @@ export default function Home({ category, meta, info, article }) {
           </p>
           <br />
           <center>
-            <div style={{width: '100%', height: '100%', position: 'relative'}}>
               <Image
                 className="img-fluid"
                 src={
@@ -55,10 +54,8 @@ export default function Home({ category, meta, info, article }) {
                 }
                 id="img-articles"
                 alt={articles.judul}
-                layout='fill'
-                objectFit='contain'
+                width="100%" height="50%" layout="responsive" objectFit="cover"
               />
-            </div>
           </center>
           <br />
           <div
