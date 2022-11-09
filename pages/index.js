@@ -205,7 +205,7 @@ export default function Home({ category, meta, info, article }) {
       <div className="jumbotron text-dark" id="portfolio">
         <h2 className="halo-text3 text-white text-center">{"Portfolio"}</h2>
         <div className="container">
-          <Article article={article} />
+          <Article article={article} pagename={'index'} />
         </div>
       </div>
       {/* <div className="footer text-white mb-4" id="contact">

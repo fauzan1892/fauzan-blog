@@ -32,7 +32,7 @@ export default function Post({ category, meta, article, getpage }) {
           <b>{meta.title_web}</b>
         </h2>
         <div className="container">
-          <Article article={article} getpage={getpage} />
+          <Article article={article} getpage={getpage} pagename={'category'} />
         </div>
       </div>
       <Footer />
